@@ -1,0 +1,41 @@
+{
+	"name": "vscode-jump-outside-indent",
+	"displayName": "Jump outside indent",
+	"description": "Jump before the current indent with Alt-[ and after the current indent with Alt-]",
+	"version": "0.1.0",
+	"publisher": "zb3",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zb3/vscode-jump-outside-indent.git"
+	},
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"activationEvents": [
+		"onCommand:jumpOutsideIndent.jumpBefore",
+		"onCommand:jumpOutsideIndent.jumpAfter"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"keybindings": [
+			{
+				"command": "jumpOutsideIndent.jumpBefore",
+				"key": "alt+[",
+				"when": "editorTextFocus && !editorHasSelection"
+			},
+			{
+				"command": "jumpOutsideIndent.jumpAfter",
+				"key": "alt+]",
+				"when": "editorTextFocus && !editorHasSelection"
+			}
+		]
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.50.0"
+	},
+	"categories": [
+		"Other"
+	]
+}
