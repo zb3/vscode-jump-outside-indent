@@ -10,6 +10,7 @@ function getIndentLevel(/** @type {vscode.TextEditor} */ editor, /** @type {numb
 function moveTo(/** @type {vscode.TextEditor} */ editor, /** @type {number} */ line, /** @type {number} */ col) {
   const position = new vscode.Position(line, col);
   editor.selection = new vscode.Selection(position, position);
+  editor.revealRange(new vscode.Range(position, position));
 }
 
 function jump(/** @type {vscode.TextEditor} */ editor, /** @type {number} */ dir) {
